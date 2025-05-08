@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="header3">
+        <img src="{{ url_for('static', filename='images/aidex - copia.png') }}" class="logo" alt="logo">
+        <li>
+            <a href="{{ url_for('consultar') }}" class="nav-link">Consultar datos</a>
+            <a href="{{ url_for('index') }}" class="nav-link">Inicio</a>
+
+        </li>
+    </div>
+    <div class="texto">
+        <img src="{{ url_for('static', filename='images/texto.png') }}" class="imgtext" alt="que triste no tener internet">
+
+    </div>
+</body>
+<div class="footer3">
+    <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2"/>
+    <h3>© 2025 Todo el dinero resevado para comprar pod.</h3>
+</div>
+</html>

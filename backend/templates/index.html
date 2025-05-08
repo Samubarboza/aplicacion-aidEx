@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AidEx</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='images/aidex - copia.png') }}" class="logo" alt="logo">
+        <li>
+            <a href="{{ url_for('consultar') }}" class="nav-link">Consultar datos</a>
+            <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre nosotros</a>
+
+        </li>
+    </div>
+    
+    <div class="contenedor">
+        <div class="izquierda">
+            <img src="{{ url_for('static', filename='images/logopri.png') }}" class="logotipo" alt="logotipo">
+        </div>
+
+        <div class="derecha">
+            <h2>Carga tus datos aca</h2>
+            
+            {% if mensaje %}
+                <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ mensaje }}</p>
+            {% endif %}
+
+            {% if usuario_existe %}
+            <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ usuario_existe }}</p>
+            {% endif %}
+            
+            <form action="/cargar-formulario" method="post" class="formulario">
+                <div style="display: flex; gap: 20px;">
+                    <div class="columna-izquierda">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Elba Lazo" required>
+                        
+                        <label for="cedula">Numero de cedula</label>
+                        <input type="text" id="cedula" name="cedula" placeholder="Ej: 5550199" required>
+                        
+
+                        <label for="fecha">Fecha de nacimiento</label>
+                        <input type="date" id="fecha" name="fecha">
+
+                        <label for="email">Correo electronico</label>
+                        <input type="email" id="email" name="email" placeholder="Ingresa tu email">
+
+                        <label for="contacto">Contacto de emergencia</label>
+                        <input type="text" id="contacto" name="contacto_emergencia" placeholder="Numero de una persona de confianza" required>
+                    </div>
+
+                    <div class="columna-derecha">
+                        <label for="enfermedad">Tenes alguna enfermedad cronica?</label>
+                        <input type="text" id="enfermedad" name="enfermedad" placeholder="Deja este campo en blanco si no">
+
+                        <label for="alergia">Tenes alguna alergia?</label>
+                        <input type="text" id="alergia" name="alergia" placeholder="Deja este campo en blanco si no">
+
+                        <label for="medicamento">Estas tomando algun medicamento?</label>
+                        <input type="text" id="medicamento" name="medicamento" placeholder="Deja este campo en blanco si no">
+
+                        <label for="comentarios">Comentarios adicionales</label>
+                        <input type="text" id="comentarios" name="comentarios" placeholder="Alguna aclaracion que creas necesaria?">
+
+                        <label for="tipoSangre">Tipo de Sangre</label>
+                        <div class="radio-container">
+                            <label><input type="radio" name="tipoSangre" value="A+" required> A+</label>
+                            <label><input type="radio" name="tipoSangre" value="A-"> A-</label>
+                            <label><input type="radio" name="tipoSangre" value="B+"> B+</label>
+                            <label><input type="radio" name="tipoSangre" value="B-"> B-</label>
+                            <label><input type="radio" name="tipoSangre" value="O+"> O+</label>
+                            <label><input type="radio" name="tipoSangre" value="O-"> O-</label>
+                            <label><input type="radio" name="tipoSangre" value="AB+"> AB+</label>
+                            <label><input type="radio" name="tipoSangre" value="AB-"> AB-</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Cargar datos</button>
+
+                <label class="checkbox-label">
+                    <div class="tyc">
+                        <input type="checkbox" required> Acepto los <a href="{{ url_for('terminos_y_condiciones') }}" class="nav-link">terminos y condiciones</a>
+                    </div>
+                </label>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+<div class="footer">
+    <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2">
+    <h3>© 2025 Todo el dinero reservado para comprar pod.</h3>
+</div>
+</html>
