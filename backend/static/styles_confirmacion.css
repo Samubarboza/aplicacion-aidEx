@@ -106,59 +106,15 @@ h4 {
     color: #13b0a2; /* <-- y este es el que cambia de color*/
 }
 
-.links {
-    display: flex; /* Alineación en línea para los hijos */
-    justify-content: flex-end; /* Alinea los hijos al final (derecha) */
-    align-items: center; /* Alinea verticalmente los elementos */
-    padding: 10px; /* Espaciado interno para que no esté pegado */
-    width: 100%; /* Ocupa todo el ancho disponible */
-
+.navlink{ /* <-- este es el boton "sobre nosotros"*/
+    margin-left: auto; /* para que este hacia la derecha */
+    margin-right: 20px; /* <-- para que no se pegue todo */
+    font-family: 'googlesans'; /* <-- para la fuente que quede todo facha*/
+    color: white; /* <-- feroz ahi dice qlq buscas*/
+    text-decoration: none; /* <-- este le puse pq no me gusta que este subrayado jaajaj tembopire*/
+    font-size: 16px; /* <-- el tamano de mi pi, de la fuente */
+    transition: color 0.3s ease; /* <-- para que el cambio de color sea re facha */
 }
-
-.navlink {
-    margin-right: 20px; /* Espaciado del botón */
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-
-    /* Unidades relativas para márgenes y fuente */
-    margin-right: 2vw; /* Se adapta al ancho de la pantalla */
-    font-size: 1.2vw; /* Ajusta el tamaño según el ancho de la pantalla */
-}
-
-/* Hover para efecto interactivo */
-.navlink:hover {
-    color: #00ff00; /* Cambia a un color llamativo al pasar el mouse */
-}
-
-/* Responsividad específica con media queries */
-@media (max-width: 768px) {
-    .links {
-        justify-content: center; /* Centra el contenido en pantallas más pequeñas */
-        padding: 5px; /* Reduce el padding */
-    }
-
-    .navlink {
-        margin-right: 10px; /* Márgenes más pequeños */
-        font-size: 0.9rem; /* Tamaño de fuente reducido */
-    }
-}
-
-@media (max-width: 480px) {
-    .links {
-        flex-direction: column; /* Apila los elementos verticalmente */
-        padding: 5px;
-    }
-
-    .navlink {
-        margin-right: 0; /* Elimina margen lateral */
-        margin-bottom: 10px; /* Espaciado inferior para separación */
-        font-size: 0.8rem; /* Tamaño de fuente pequeño */
-    }
-}
-
 
 .navlink:hover {
     color: #13b0a2; /* <-- y este es el que cambia de color*/
@@ -183,7 +139,7 @@ li{
 .logo { /* <-- el logo que esta arriba mismo a la derecha */
     filter: drop-shadow(0px 4px 12px #000000); /* <-- sombra */
     height: 40%; /* <-- tamaniooooo */
-    padding: 5%; /* <-- pa que no se pegue por nada*/
+    width: 50%;
 }
 
 .logo2{ /* <-- este es el logo que esta abajo mismo a la derecha tambien*/
@@ -207,7 +163,6 @@ li{
     border-bottom-left-radius: 24px; /* <-- para la parte redonda */
     border-bottom-right-radius: 24px; /* <-- lo mismo de arriba */
 }
-
 .footer { /* <-- el div que se encuentra abajo mismo*/
     filter: drop-shadow(0px 4px 12px #000000); /* <-- para la sombra */
     width: 100%; /* <-- para que su largo sea el 90 de la pantalla (horizontal) */

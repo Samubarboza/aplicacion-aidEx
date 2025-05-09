@@ -3,59 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Datos del Usuario</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vistasheet.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
 </head>
 <body class="bg-gray-100 p-8">
 
-    <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-        <h1 class="text-3xl font-bold mb-6 text-center text-indigo-600">Información del Usuario</h1>
+    <div class="max">
+        <a href="{{ url_for('index') }}" class="logoboton"><img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo" alt="logo"></a>
+        <h1>Información del Usuario</h1>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-                <p class="font-semibold">Nombre:</p>
-                <p class="text-gray-700">{{ contacto.nombre }}</p>
+        <div class="grid">
+            <div class="inf">
+                <p class="titulo">Nombre:</p>
+                <p>{{ contacto.nombre }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Cédula:</p>
-                <p class="text-gray-700">{{ contacto.cedula }}</p>
+            <div class="inf">
+                <p class="titulo">Cédula:</p>
+                <p>{{ contacto.cedula }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Fecha:</p>
-                <p class="text-gray-700">{{ contacto.fecha }}</p>
+            <div class="inf">
+                <p class="titulo">Fecha:</p>
+                <p>{{ contacto.fecha }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Email:</p>
-                <p class="text-gray-700">{{ contacto.email }}</p>
+            <div class="inf">
+                <p class="titulo">Email:</p>
+                <p>{{ contacto.email }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Contacto de Emergencia:</p>
-                <p class="text-gray-700">{{ contacto.contacto_emergencia }}</p>
+            <div class="inf">
+                <p class="titulo">Contacto de Emergencia:</p>
+                <p>{{ contacto.contacto_emergencia }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Enfermedad:</p>
-                <p class="text-gray-700">{{ contacto.enfermedad }}</p>
+            <div class="inf">
+                <p class="titulo">Enfermedad:</p>
+                <p>{{ contacto.enfermedad }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Alergia:</p>
-                <p class="text-gray-700">{{ contacto.alergia }}</p>
+            <div class="inf">
+                <p class="titulo">Alergia:</p>
+                <p>{{ contacto.alergia }}</p>
             </div>
-            <div>
-                <p class="font-semibold">Medicamento:</p>
-                <p class="text-gray-700">{{ contacto.medicamento }}</p>
+            <div class="inf">
+                <p class="titulo">Medicamento:</p>
+                <p>{{ contacto.medicamento }}</p>
             </div>
-            <div class="col-span-1 sm:col-span-2">
-                <p class="font-semibold">Tipo de Sangre:</p>
-                <p class="text-gray-700">{{ contacto.tipo_de_sangre }}</p>
+            <div class="inf">
+                <p class="titulo">Tipo de Sangre:</p>
+                <p>{{ contacto.tipo_de_sangre }}</p>
             </div>
-            <div class="col-span-1 sm:col-span-2">
-                <p class="font-semibold">Comentarios:</p>
-                <p class="text-gray-700 whitespace-pre-line">{{ contacto.comentarios }}</p>
+            <div class="inf">
+                <p class="titulo">Comentarios:</p>
+                <p class="hitespace-pre-line">{{ contacto.comentarios }}</p>
             </div>
         </div>
-
-        <div class="mt-8 text-center">
-            <a href="{{ url_for('index') }}" class="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition">Volver al inicio</a>
-        </div>
+        <h3>© 2025 Todo el dinero resevado para comprar pod.</h3>
     </div>
 
 </body>

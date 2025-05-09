@@ -9,39 +9,40 @@
 </head>
 <body>
     <div class="header">
-        <img src="{{ url_for('static', filename='images/aidex - copia.png') }}" class="logo" alt="logo">
-        <li>
-            <a href="{{ url_for('consultar') }}" class="nav-link">Consultar datos</a>
-            <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre nosotros</a>
-
-        </li>
+        <a href="   " class="logoboton">
+            <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo" alt="logo">
+        </a>
+        <div class="links">
+            <li>
+                <a href="{{ url_for('consultar') }}" class="nav-link">Consultar datos</a>
+                <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre nosotros</a>
+            </li>
+        </div>    
     </div>
-    
     <div class="contenedor">
         <div class="izquierda">
             <img src="{{ url_for('static', filename='images/logopri.png') }}" class="logotipo" alt="logotipo">
         </div>
 
         <div class="derecha">
-            <h2>Carga tus datos aca</h2>
-            
+            <h2>Completa con tus datos</h2>
+
             {% if mensaje %}
-                <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ mensaje }}</p>
+            <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ mensaje }}</p>
             {% endif %}
 
             {% if usuario_existe %}
             <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ usuario_existe }}</p>
             {% endif %}
-            
+
             <form action="/cargar-formulario" method="post" class="formulario">
                 <div style="display: flex; gap: 20px;">
                     <div class="columna-izquierda">
                         <label for="nombre">Nombre y Apellido</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Ej: Elba Lazo" required>
-                        
+
                         <label for="cedula">Numero de cedula</label>
                         <input type="text" id="cedula" name="cedula" placeholder="Ej: 5550199" required>
-                        
 
                         <label for="fecha">Fecha de nacimiento</label>
                         <input type="date" id="fecha" name="fecha">
@@ -53,6 +54,7 @@
                         <input type="text" id="contacto" name="contacto_emergencia" placeholder="Numero de una persona de confianza" required>
                     </div>
 
+                    <!-- Nueva columna con inputs de texto -->
                     <div class="columna-derecha">
                         <label for="enfermedad">Tenes alguna enfermedad cronica?</label>
                         <input type="text" id="enfermedad" name="enfermedad" placeholder="Deja este campo en blanco si no">
@@ -68,24 +70,29 @@
 
                         <label for="tipoSangre">Tipo de Sangre</label>
                         <div class="radio-container">
-                            <label><input type="radio" name="tipoSangre" value="A+" required> A+</label>
-                            <label><input type="radio" name="tipoSangre" value="A-"> A-</label>
-                            <label><input type="radio" name="tipoSangre" value="B+"> B+</label>
-                            <label><input type="radio" name="tipoSangre" value="B-"> B-</label>
-                            <label><input type="radio" name="tipoSangre" value="O+"> O+</label>
-                            <label><input type="radio" name="tipoSangre" value="O-"> O-</label>
-                            <label><input type="radio" name="tipoSangre" value="AB+"> AB+</label>
-                            <label><input type="radio" name="tipoSangre" value="AB-"> AB-</label>
+                            
+                                <select id="tipoSangre" name="tipoSangre" class="select-fachero">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="A+" name="tipoSangre">A+</option>
+                                    <option value="A-" name="tipoSangre">A-</option>
+                                    <option value="B+" name="tipoSangre">B+</option>
+                                    <option value="B-" name="tipoSangre">B-</option>
+                                    <option value="O+" name="tipoSangre">O+</option>
+                                    <option value="O-" name="tipoSangre">O-</option>
+                                    <option value="AB+" name="tipoSangre">AB+</option>
+                                    <option value="AB-" name="tipoSangre">AB-</option>
+                                </select>
                         </div>
                     </div>
                 </div>
+
                 <button type="submit">Cargar datos</button>
 
                 <label class="checkbox-label">
                     <div class="tyc">
-                        <input type="checkbox" required> Acepto los <a href="{{ url_for('terminos_y_condiciones') }}" class="nav-link">terminos y condiciones</a>
-                    </div>
+                        <input type="checkbox" required> Acepto los <a target="_blank" href="{{ url_for('terminos_y_condiciones') }}" class="nav-link">Términos y Condiciones</a>
                 </label>
+                </div>
             </form>
         </div>
     </div>
@@ -93,6 +100,6 @@
 </body>
 <div class="footer">
     <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2">
-    <h3>© 2025 Todo el dinero reservado para comprar pod.</h3>
+    <h3>© 2025 Todos los derechos reservados</h3>
 </div>
 </html>

@@ -8,13 +8,19 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
 </head>
 <body>
-    <div class="header2">
-        <img src="{{ url_for('static', filename='images/aidex - copia.png') }}" class="logo" alt="logo">
-        <a href="{{ url_for('sobre_nosotros') }}" class="nav-link">Sobre nosotros</a>
+    <div class="header">
+        <a href="{{ url_for('index') }}" class="logoboton">
+            <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2"/>
+        </a>
+        <div class="links">
+            <li>
+                <a href="{{ url_for('sobre_nosotros') }}" target="_blank" class="nav-link">Sobre nosotros</a>
+            </li>
+        </div>
     </div>
     <div class="bloque">
         <div class="titulo">
-            <h4>INGRESA EL NUMERO DE IDENTIFICACION</h4>
+            <h2>INGRESA EL NUMERO DE IDENTIFICACION</h2>
         </div>
         <div class="contenido">
             <div class="imagen">
@@ -26,14 +32,16 @@
                     <input type="text" id="nombre" name="nombre" placeholder="Ingresa el numero encima del QR" required>
                     <button type="submit">Buscar</button>
                 </form>
+
                 {% if mensaje_ %}
                 <p style="color: rgb(255, 255, 255); font-weight: bold;">{{ mensaje_ }}</p>
                 {% endif %}
+
             </div>
         </div>
     </div>
 </body>
-<div class="footer2">
+<div class="footer">
     <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2"/>
     <h3>© 2025 Todo el dinero resevado para comprar pod.</h3>
 </div>

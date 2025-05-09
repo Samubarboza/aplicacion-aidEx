@@ -8,20 +8,21 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png">
 </head>
 <body>
-    <div class="header3">
-        <img src="{{ url_for('static', filename='images/aidex - copia.png') }}" class="logo" alt="logo">
-        <li>
-            <a href="{{ url_for('consultar') }}" class="nav-link">Consultar datos</a>
-            <a href="{{ url_for('index') }}" class="nav-link">Inicio</a>
-
-        </li>
+    <div class="header">
+        <a href="{{ url_for('index') }}" class="logoboton">
+            <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2"/>
+        </a>
+        <div class="links">
+            <li>
+                <a href="{{ url_for('consultar') }}" class="nav-link"></a>
+            </li>
+        </div>
     </div>
     <div class="texto">
         <img src="{{ url_for('static', filename='images/texto.png') }}" class="imgtext" alt="que triste no tener internet">
-
     </div>
 </body>
-<div class="footer3">
+<div class="footer">
     <img src="{{ url_for('static', filename='images/aidex.png') }}" class="logo2"/>
     <h3>© 2025 Todo el dinero resevado para comprar pod.</h3>
 </div>

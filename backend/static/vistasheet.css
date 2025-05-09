@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'googlesans';
+    src: url('/Fuentes/googlesans.ttf') format('truetype');
+}
+
+body {
+    background-color: #f7f3f2;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'googlesans';
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3{
+    font-family: 'googlesans';
+    font-weight: lighter;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.max {
+    background-color: #243545;
+    min-height: 80vh;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    max-width: 800px;
+    width: 100%;
+    font-family: 'googlesans';
+    border-radius: 12px;
+}
+
+.inf {
+    font-family: 'googlesans';
+    background-color: white;
+    color: #243545;
+    padding: 5%;
+    margin: 0;
+    text-align: center;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+a {
+    font-family: 'googlesans';
+    text-decoration: none;
+}
+
+.logo{
+    height: 100px;
+}
