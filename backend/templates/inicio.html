@@ -32,8 +32,10 @@
                 <img src="{{ url_for('static', filename='images/image3.jpg') }}" alt="Imagen 3">
             </div>
         </div>
+    
         <button class="carousel-btn prev">&lt;</button>
         <button class="carousel-btn next">&gt;</button>
+    
         <div class="carousel-indicators">
             <span class="indicator active"></span>
             <span class="indicator"></span>
@@ -46,29 +48,32 @@
         border-radius: 15px;
         position: relative;
         width: 100%;
-        max-width: 90%; /* Carrusel más grande */
-        height: 200%; /* Altura configurada */
+        max-width: 95%;
+        height: 100vh; 
         margin: auto;
         overflow: hidden;
-        margin-top: 5%;
+        top: 7.5%;
     }
+    
     .carousel-inner {
         display: flex;
-        width: 100%; /* Tres elementos visibles en fila */
-        height: 100%; /* Igual a la altura del carrusel */
+        width: 100%;
+        height: 100%;
         transition: transform 0.5s ease-in-out;
     }
+    
     .carousel-item {
-        flex: 0 0 100%; /* Cada item ocupa el 100% del ancho del carrusel */
-        height: 100%; /* Mantiene la altura establecida */
+        flex: 0 0 100%;
+        height: 100%;
         text-align: center;
     }
+    
     .carousel-item img {
         width: 100%;
-        
-        height: 100%; /* Asegura que las imágenes llenen el espacio */
-        object-fit: cover; /* Recorta imágenes si es necesario */
+        height: 100%;
+        object-fit: cover; /* 🔁 Cambiá a 'contain' si querés que no se recorte la imagen */
     }
+    
     .carousel-btn {
         position: absolute;
         top: 50%;
@@ -81,12 +86,15 @@
         cursor: pointer;
         z-index: 10;
     }
+    
     .carousel-btn.prev {
         left: 20px;
     }
+    
     .carousel-btn.next {
         right: 20px;
     }
+    
     .carousel-indicators {
         position: absolute;
         bottom: 20px;
@@ -95,6 +103,7 @@
         display: flex;
         gap: 10px;
     }
+    
     .indicator {
         width: 15px;
         height: 15px;
@@ -102,6 +111,7 @@
         border-radius: 50%;
         cursor: pointer;
     }
+    
     .indicator.active {
         background: gray;
     }
@@ -115,7 +125,7 @@
         let currentIndex = 0;
     
         function updateCarousel(index) {
-            const offset = -index * 100; // Desplazamiento basado en índice
+            const offset = -index * 100;
             carousel.style.transform = `translateX(${offset}%)`;
             indicators.forEach((indicator, i) => {
                 indicator.classList.toggle("active", i === index);
@@ -140,7 +150,6 @@
         });
     });
     </script>
-    
     
 
     
